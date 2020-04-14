@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Word Image Handler</title>
+
+    <style>
+      body {
+        overflow: auto;
+        margin: 0;
+        padding: 0 20px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar{
+        width:5px;
+        height:5px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track{
+        background: rgb(239, 239, 239);
+        border-radius:2px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb{
+        background: #bfbfbf;
+        border-radius:10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover{
+        background: #333;
+      }
+      .custom-scrollbar::-webkit-scrollbar-corner{
+        background: #179a16;
+      }
+      .custom-scrollbar{
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body class="custom-scrollbar">
+        <h1>Question</h1>
+        <h3 style="white-space: normal;">
+            <strong style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;">1. 关于更新？</strong>
+        </h3>
+        <p style="white-space: normal;">
+            &nbsp;&nbsp;&nbsp;&nbsp;有了新版本后，会自动下载更新，可以选择现在更新或者关闭后再更新。
+        </p>
+        <h3 style="white-space: normal;">
+          <strong style="font-family: 微软雅黑, Microsoft YaHei; font-size: 16px;">2. 没有出现运行成功页面怎么办？</strong>
+        </h3>
+        <p style="white-space: normal;">
+          &nbsp;&nbsp;&nbsp;&nbsp;重启；如果不成功按F1查看，如果显示端口被占用，处理方式见问题3
+        </p>
+        <p style="white-space: normal;">
+            <strong style="font-family: 微软雅黑,Microsoft YaHei;">3. 如果端口8888被占用怎么办？</strong>
+        </p>
+        <p style="white-space: normal;">
+            &nbsp;&nbsp;&nbsp;&nbsp;四步关闭占用端口应用：
+        </p>
+        <p style="white-space: normal;">
+            &nbsp;&nbsp;&nbsp;&nbsp;a. Win+R打开运行窗口，输入cmd，打开命令行窗口
+        </p>
+        <p style="white-space: normal;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/Q1.png" title="image.png" width="369" height="228" alt="" style="width: 369px; height: 228px;"/>
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;b. 输入： netstat -ano | findstr &quot;8888&quot; , 查得占用端口应用的PID
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/Q2.png" title="image.png" width="789" height="90" alt="" style="width: 789px; height: 90px;"/>
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;c. 输入： tasklist | findstr &quot;15196&quot;, 查得应用名称（15196来自上边查得的PID）
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/Q3.png" title="image.png" width="831" height="77" alt="" style="width: 831px; height: 77px;"/>
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;d. 输入： taskkill /f /t /im word-image-handler.exe， （名称自上一条查得）
+        </p>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/Q4.png" title="image.png" width="566" height="190" alt="" style="width: 566px; height: 190px;"/>
+        </p>
+        <br/>
+  </body>
+</html>
